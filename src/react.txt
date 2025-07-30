@@ -1,0 +1,5 @@
+3. Tại sao lại dùng Toolchains
+- Hot Reloading : Những sự thay đổi về giao diện có thể thấy ngay lập tức mà không cần tải lại trang
+- Babel Compiler : Code được các Version của JS khác nhau
+- Webpack : Công cụ nén code lại
+- Ready for production : Sẵn sàng lên sản phẩm
