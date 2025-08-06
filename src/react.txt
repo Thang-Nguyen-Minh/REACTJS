@@ -3,3 +3,29 @@
 - Babel Compiler : Code được các Version của JS khác nhau
 - Webpack : Công cụ nén code lại
 - Ready for production : Sẵn sàng lên sản phẩm
+1.Component là gì
+- Component là cách React tạo nên bố cục của một website. Giống như trò chơi
+xếp hình, thay vì chúng ta code các khối HTML riêng lẻ, thì ở đây, chúng ta sử
+dụng Component
+- Component khác HTML ở chỗ là nó sử dụng cú pháp JSX. Với JSX, chúng ta có
+thể code logic Javascript cùng với HTML
+2.Cách khai báo Component (Class Component)
+(Về function component, chúng ta sẽ học ở chương sau)
+- Class javascript cần kế thừa (extend) lớp Component của React để trở thành
+Component
+- Với component, chúng ta có hàm render( ) giúp tạo nên giao diện website. Hàm
+render này sử dụng cú pháp JSX
+3. Một vài lưu ý
+Cú pháp export default, có nghĩa là trong file js ấy, chúng ta chỉ export “1 hàm” duy nhất.
+// foo.js
+export default function() { console.log("hello!") }
+//sau đấy, dùng câu lệnh import để sử dụng biến đã export
+import foo from "foo";
+foo(); // hello!
+Khi import, đôi khi chúng ta sử dụng 1 dấu chấm,
+import { increaseCounter, decreaseCounter } from ' ./redux/action/counterAction ';
+Đôi khi chúng ta sử dụng 2 dấu chấm
+import { INCREMENT, DECREMENT } from ' ../action/counterAction ';
+Thì ở đây:
+. là current directory (thư mục hiện tại)
+.. parent directory (thự mục cha)
