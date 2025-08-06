@@ -26,16 +26,28 @@ class MyComponent extends React.Component {
     handleOnMoveOver = (event)=>{
         console.log(event);
     }
+    handleOnChangeInput = (event) => {
+        event.preventDefault();
+        this.setState({
+            name: event.target.value,
+        })
+    }
+    handleOnSubmit = (event) => {
+        event.preventDefault();
+        console.log(this.state);
+    }
     //jsx : 1 mk React có . Viết code JS bên trong code HTML
     render () {
         //trả về 1 và chỉ 1 phần tử HTML
         //{Viết code JS trong này}
+        //Nhập gì đó => thay thế cho tên ở chỗ state.name
         return(
             <div>
                 My name is {this.state.name} and I'm from {this.state.address} and I'm {this.state.age} years old
-                <button onClick={this.handleClick}>Click mee</button>
-                <button onClick={(event) => {this.handleClick(event)}}>Click mee</button>
-                <button onMouseOver={this.handleOnMoveOver}>Hover mee</button>
+                <form onSubmit={(event) => {this.handleOnSubmit(event)}}>
+                    <input type='text' onChange={(event) => {this.handleOnChangeInput(event)}}/>
+                    <button type="submit" >Submit</button>
+                </form>
             </div>
         )
     }
