@@ -3,6 +3,7 @@
 - Babel Compiler : Code được các Version của JS khác nhau
 - Webpack : Công cụ nén code lại
 - Ready for production : Sẵn sàng lên sản phẩm
+
 1.Component là gì
 - Component là cách React tạo nên bố cục của một website. Giống như trò chơi
 xếp hình, thay vì chúng ta code các khối HTML riêng lẻ, thì ở đây, chúng ta sử
@@ -29,3 +30,12 @@ import { INCREMENT, DECREMENT } from ' ../action/counterAction ';
 Thì ở đây:
 . là current directory (thư mục hiện tại)
 .. parent directory (thự mục cha)
+
+#17 State
+1.Component State
+- Là Javascript Object
+- Miêu tả trạng thái (state) hiện tại của Component: data/UI-state
+- State của Component có thể được cập nhật, ví dụ như: đóng/mở Modal…
+2.Sử dụng State
+Khai báo: state = { } <= state là javascript object
+Sử dụng: { this.state.property }
