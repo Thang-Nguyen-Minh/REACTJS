@@ -1,5 +1,6 @@
 import React from 'react'
 import UserInfo from './UserInfo'
+import DisplayInfo from './DisplayInfo'
 //class component
 //function component
 //render : tập hợp khối HTML xong chuyển thành giao diện
@@ -30,9 +31,20 @@ class MyComponent extends React.Component {
         //trả về 1 và chỉ 1 phần tử HTML
         //{Viết code JS trong này}
         //Nhập gì đó => thay thế cho tên ở chỗ state.name
+        const myAge=22;
         return(
             <div>
                 <UserInfo/>
+                <br/> <br/>
+                <DisplayInfo
+                    name="Minh Thang"
+                    age={myAge}
+                />
+                <hr/>
+                <DisplayInfo
+                    name="Thanh Binh"
+                    age={20}
+                />
             </div>
         )
     }
