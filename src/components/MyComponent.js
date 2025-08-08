@@ -1,13 +1,12 @@
+import React from 'react'
+import UserInfo from './UserInfo'
 //class component
 //function component
 //render : tập hợp khối HTML xong chuyển thành giao diện
-import React from 'react'
+//22. Nesting Component - Component Cha Lồng Con
+//Tách đống code ra : chia vào 1 file khác rồi gọi vào đây => lồng component
+//Sửa đổi state của React Component => phải dùng setState
 class MyComponent extends React.Component {
-    state = {
-      name : 'Eric',
-      address: 'Hỏi Dân IT',
-      age: 26
-    };
     //this : ánh xạ (dại diện) cho obj mà mk tham chiếu , this ở đây là MyComponent
     //Nhấn vào click me in ra 1 dòng log gì đó
     handleClick = (event) => {
@@ -26,16 +25,6 @@ class MyComponent extends React.Component {
     handleOnMoveOver = (event)=>{
         console.log(event);
     }
-    handleOnChangeInput = (event) => {
-        event.preventDefault();
-        this.setState({
-            name: event.target.value,
-        })
-    }
-    handleOnSubmit = (event) => {
-        event.preventDefault();
-        console.log(this.state);
-    }
     //jsx : 1 mk React có . Viết code JS bên trong code HTML
     render () {
         //trả về 1 và chỉ 1 phần tử HTML
@@ -43,11 +32,7 @@ class MyComponent extends React.Component {
         //Nhập gì đó => thay thế cho tên ở chỗ state.name
         return(
             <div>
-                My name is {this.state.name} and I'm from {this.state.address} and I'm {this.state.age} years old
-                <form onSubmit={(event) => {this.handleOnSubmit(event)}}>
-                    <input type='text' onChange={(event) => {this.handleOnChangeInput(event)}}/>
-                    <button type="submit" >Submit</button>
-                </form>
+                <UserInfo/>
             </div>
         )
     }
