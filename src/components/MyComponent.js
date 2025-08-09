@@ -26,24 +26,38 @@ class MyComponent extends React.Component {
     handleOnMoveOver = (event)=>{
         console.log(event);
     }
+    state = {
+        listUsers:[
+            {
+                id: 1,
+                name: 'Minh Thang',
+                age: 21
+            },
+            {
+                id: 2,
+                name: 'Thanh Binh',
+                age: 19
+            },
+            {
+                id: 3,
+                name: 'Kieu Yen',
+                age: 22
+            }
+        ]
+    }
     //jsx : 1 mk React có . Viết code JS bên trong code HTML
     render () {
         //trả về 1 và chỉ 1 phần tử HTML
         //{Viết code JS trong này}
         //Nhập gì đó => thay thế cho tên ở chỗ state.name
-        const myAge=22;
+        //DRY : Don't repeat yourself : Tối ưu hóa code thay vì thực hiện lại 1 công việc nhiều lần
         return(
             <div>
                 <UserInfo/>
                 <br/> <br/>
                 <DisplayInfo
-                    name="Minh Thang"
-                    age={myAge}
-                />
-                <hr/>
-                <DisplayInfo
-                    name="Thanh Binh"
-                    age={20}
+                    listUsers={this.state.listUsers}
+                    users={this.state.listUsers}
                 />
             </div>
         )
