@@ -19,7 +19,7 @@ class DisplayInfo extends React.Component {
         const {listUsers} = this.props;//objects
         // const listUsers=this.props.listUsers;
         //in ra 1 mảng chứa nhiều obj
-        console.table(listUsers);
+        //console.table(listUsers);
         //map yêu cầu truyền vào 1 function : lặp từng phần từ 1
         //map trả về 1 mảng mới và mảng mới chứa code HTML
         //covert từ string sang number => thêm dấu + vào trước string

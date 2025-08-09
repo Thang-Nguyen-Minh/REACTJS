@@ -1,5 +1,5 @@
 import React from 'react'
-import UserInfo from './UserInfo'
+import AddUserInfo from './AddUserInfo'
 import DisplayInfo from './DisplayInfo'
 //class component
 //function component
@@ -45,6 +45,17 @@ class MyComponent extends React.Component {
             }
         ]
     }
+    handleAddNewUser = (userObj ) => {
+        // let listUsersNew=this.state.listUsers;
+        // listUsersNew.unshift(userObj);
+        // this.setState({
+        //     listUsers :listUsersNew
+        // })
+        //Thêm 1 data ở đầu mảng : [data,...tên mảng], nhớ là phải copy lại cả mảng đó
+        this.setState({
+            listUsers:[userObj,...this.state.listUsers],
+        })
+    }
     //jsx : 1 mk React có . Viết code JS bên trong code HTML
     render () {
         //trả về 1 và chỉ 1 phần tử HTML
@@ -53,11 +64,12 @@ class MyComponent extends React.Component {
         //DRY : Don't repeat yourself : Tối ưu hóa code thay vì thực hiện lại 1 công việc nhiều lần
         return(
             <div>
-                <UserInfo/>
+                <AddUserInfo
+                    handleAddNewUser={this.handleAddNewUser}
+                />
                 <br/> <br/>
                 <DisplayInfo
                     listUsers={this.state.listUsers}
-                    users={this.state.listUsers}
                 />
             </div>
         )

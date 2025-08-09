@@ -1,10 +1,10 @@
 import React from "react";
 //1. Tạo 1 class kế thừa React.Component và export nó ra, chả hiểu dạy cái này làm chó gì
-class UserInfo extends React.Component {
+class AddUserInfo extends React.Component {
     state = {
-        name : 'Eric',
+        name : '',
         address: 'Hỏi Dân IT',
-        age: 26
+        age: ''
     };
     //Khi gọi đến hàm sẽ cập nhật giá trị tên và tuổi
     handleOnChangeInput = (event) => {
@@ -22,6 +22,11 @@ class UserInfo extends React.Component {
     handleOnSubmit = (event) => {
         event.preventDefault();
         console.log(this.state);
+        this.props.handleAddNewUser({
+            id : Math.floor(Math.random()*100)+1+"-random",
+            name : this.state.name,
+            age : this.state.age
+        });//đang thực thi => cần ()
     }
     render() {
         return (
@@ -46,4 +51,4 @@ class UserInfo extends React.Component {
         )
     }
 }
-export default UserInfo;
+export default AddUserInfo;
