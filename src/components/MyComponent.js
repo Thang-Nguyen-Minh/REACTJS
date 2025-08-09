@@ -31,17 +31,17 @@ class MyComponent extends React.Component {
             {
                 id: 1,
                 name: 'Minh Thang',
-                age: 21
+                age: '21'
             },
             {
                 id: 2,
                 name: 'Thanh Binh',
-                age: 19
+                age: '19'
             },
             {
                 id: 3,
                 name: 'Kieu Yen',
-                age: 22
+                age: '22'
             }
         ]
     }
