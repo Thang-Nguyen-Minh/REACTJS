@@ -63,15 +63,20 @@ class MyComponent extends React.Component {
         //Nhập gì đó => thay thế cho tên ở chỗ state.name
         //DRY : Don't repeat yourself : Tối ưu hóa code thay vì thực hiện lại 1 công việc nhiều lần
         return(
-            <div>
-                <AddUserInfo
-                    handleAddNewUser={this.handleAddNewUser}
-                />
-                <br/> <br/>
-                <DisplayInfo
-                    listUsers={this.state.listUsers}
-                />
-            </div>
+            <>
+                <div className="a">
+                    <AddUserInfo
+                        handleAddNewUser={this.handleAddNewUser}
+                    />
+                    <br/> <br/>
+                    <DisplayInfo
+                        listUsers={this.state.listUsers}
+                    />
+                </div>
+                <div className="b">
+
+                </div>
+            </>
         )
     }
 }

@@ -34,7 +34,7 @@ class DisplayInfo extends React.Component {
                 </div>
                 {/*Cờ là true thì mới show list user*/}
                 {this.state.isShowListUser &&
-                    <div>
+                    <>
                     {listUsers.map((user) => {
                         /*
                         if(+user.age > 20){
@@ -65,7 +65,7 @@ class DisplayInfo extends React.Component {
                             </div>
                         )
                     })}
-                </div>
+                    </>
                 }
             </div>
         )
