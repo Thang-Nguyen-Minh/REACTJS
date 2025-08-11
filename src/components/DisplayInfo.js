@@ -27,11 +27,11 @@ class DisplayInfo extends React.Component {
         //template(HTML) + logicJS : component
         return (
             <div className="display-info-container">
-                <img src={logo} className="display-info-logo" alt="logo"/>
+                {/*<img src={logo} className="display-info-logo" alt="logo"/>*/}
                 <div>
-                    <span onClick={()=>{this.handleShowHide()}}>
-                        {this.state.isShowListUser ? 'Hide list users :':'Show list users : '}
-                    </span>
+                    <button onClick={()=>{this.handleShowHide()}}>
+                        {this.state.isShowListUser ? 'Hide list users ':'Show list users  '}
+                    </button>
                 </div>
                 {/*Cờ là true thì mới show list user*/}
                 {this.state.isShowListUser &&
@@ -60,8 +60,13 @@ class DisplayInfo extends React.Component {
 
                         return (
                             <div key={user.id} className={+user.age>20 ? "red" : "green"}>
-                                <div>My name is {user.name}</div>
-                                <div>My age is {user.age}</div>
+                                <div>
+                                    <div>My name is {user.name}</div>
+                                    <div>My age is {user.age}</div>
+                                </div>
+                                <div>
+                                    <button onClick={(id)=>this.props.handleDeleteUser(user.id)}>Delete</button>
+                                </div>
                                 <hr/>
                             </div>
                         )

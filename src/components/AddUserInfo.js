@@ -33,13 +33,13 @@ class AddUserInfo extends React.Component {
             <div>
                 My name is {this.state.name} and I'm from {this.state.address} and I'm {this.state.age} years old
                 <form onSubmit={(event) => {this.handleOnSubmit(event)}}>
-                    <label>Your Name</label>
+                    <label>Your Name : </label>
                     <input
+
                         //ô input muốn hiện thị mặc định giá trị nào đó ngay khi vào trang web
                         value={this.state.name}//giá trị khởi tạo trong ô input
                         type='text'
                         onChange={(event) => {this.handleOnChangeInput(event)}}/>
-                    <button type="submit" >Submit</button>
                     <label>Your Age : </label>
                     <input
                         value={this.state.age}

@@ -56,6 +56,15 @@ class MyComponent extends React.Component {
             listUsers:[userObj,...this.state.listUsers],
         })
     }
+    handleDeleteUser = (userId) => {
+        let listUsersClone = this.state.listUsers;
+        listUsersClone=listUsersClone.filter((item)=>{
+            return item.id !== userId;
+        })
+        this.setState({
+            listUsers:listUsersClone,
+        })
+    }
     //jsx : 1 mk React có . Viết code JS bên trong code HTML
     render () {
         //trả về 1 và chỉ 1 phần tử HTML
@@ -66,7 +75,7 @@ class MyComponent extends React.Component {
         return(
             <>
                 {console.log(test)}
-                {JSON.stringify(test)}
+                {/*{JSON.stringify(test)}*/}
                 <br/>
                 <div className="a">
                     <AddUserInfo
@@ -75,6 +84,7 @@ class MyComponent extends React.Component {
                     <br/> <br/>
                     <DisplayInfo
                         listUsers={this.state.listUsers}
+                        handleDeleteUser={this.handleDeleteUser}
                     />
                 </div>
                 <div className="b">
