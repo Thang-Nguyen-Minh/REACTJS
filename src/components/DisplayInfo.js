@@ -24,6 +24,7 @@ class DisplayInfo extends React.Component {
         //map yêu cầu truyền vào 1 function : lặp từng phần từ 1
         //map trả về 1 mảng mới và mảng mới chứa code HTML
         //covert từ string sang number => thêm dấu + vào trước string
+        //template(HTML) + logicJS : component
         return (
             <div className="display-info-container">
                 <img src={logo} className="display-info-logo" alt="logo"/>

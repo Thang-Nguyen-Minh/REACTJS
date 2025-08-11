@@ -62,8 +62,12 @@ class MyComponent extends React.Component {
         //{Viết code JS trong này}
         //Nhập gì đó => thay thế cho tên ở chỗ state.name
         //DRY : Don't repeat yourself : Tối ưu hóa code thay vì thực hiện lại 1 công việc nhiều lần
+        const test={name:"Minh Thang",age:"21"};
         return(
             <>
+                {console.log(test)}
+                {JSON.stringify(test)}
+                <br/>
                 <div className="a">
                     <AddUserInfo
                         handleAddNewUser={this.handleAddNewUser}
