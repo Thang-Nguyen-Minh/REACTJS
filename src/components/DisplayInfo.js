@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './DisplayInfo.scss'
 class DisplayInfo extends React.Component {
     state={
         isShowListUser : true//mặc định là luôn hiện
@@ -24,7 +24,7 @@ class DisplayInfo extends React.Component {
         //map trả về 1 mảng mới và mảng mới chứa code HTML
         //covert từ string sang number => thêm dấu + vào trước string
         return (
-            <div>
+            <div className="display-info-container">
                 <div>
                     <span onClick={()=>{this.handleShowHide()}}>
                         {this.state.isShowListUser ? 'Hide list users :':'Show list users : '}
@@ -57,7 +57,7 @@ class DisplayInfo extends React.Component {
 
                         return (
                             <div key={user.id} className={+user.age>20 ? "red" : "green"}>
-                                <div>My name is {user.name}</div>
+                                <div style={{color : 'red',paddingTop : '25px'}}>My name is {user.name}</div>
                                 <div>My age is {user.age}</div>
                                 <hr/>
                             </div>
