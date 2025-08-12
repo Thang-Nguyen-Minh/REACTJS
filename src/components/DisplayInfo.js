@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import './DisplayInfo.scss'
 import logo from './../logo.svg'
 
@@ -71,11 +71,21 @@ import logo from './../logo.svg'
 const DisplayInfo = (props) => {
     //destructoring array/object
     const {listUsers} = props;//objects
-    //template(HTML) + logicJS : component
-    console.log(">>> call render");
+    const [isShowHideListUser, setShowHideListUser] = useState(true);
+    // this.state={
+    //     isShowHideListUser : true
+    // }
+    const handleShowHideListUser = () => {
+        setShowHideListUser(!isShowHideListUser);
+    }
     return (
         <div className="display-info-container">
-            {true &&
+            <div>
+                <button onClick={()=>handleShowHideListUser()}>
+                    {isShowHideListUser ? 'Hide List' : 'Show List'}
+                </button>
+            </div>
+            {isShowHideListUser &&
                 <>
                 {listUsers.map((user) => {
                     return (
