@@ -2,8 +2,35 @@ import React from 'react'
 import './DisplayInfo.scss'
 import logo from './../logo.svg'
 class DisplayInfo extends React.Component {
-    state={
-        isShowListUser : true//mặc định là luôn hiện
+    constructor(props) {
+        console.log(">>>call constructor : 1");
+        super(props);
+        this.state = {
+            isShowListUser : true
+        }
+    }
+    //Chạy sau hàm render()
+    // Thay đổi tiêu đề web : document.title : chờ web load xong mới đổi
+    //Dùng để gọi API, về sau thuần axios
+    componentDidMount() {
+        console.log('Component componentDidMount');
+        setTimeout(() => {
+            document.title='Eric & Hoi Dan IT';
+        },3000)
+    }
+    //Xảy ra khi component nhận props mới hoặc state
+    //Component update tới 1 thời điểm nào đấy thì mk sẽ phải làm 1 cái gì đấy
+    //VD : số lượng user = 10 => hiện thông báo tối đa danh sách user
+    //Muốn check điều kiện theo prop hay state
+    //So sánh giữa quá khứ và hiện tại xong mới chạy
+    //Component khi được cập nhật có dữ liệu nào và mk muốn làm gì với dữ liệu đó
+    componentDidUpdate(prevProps,prevState){
+        console.log('Component componentDidUpdate',this.props,prevProps);
+        if(this.props.listUsers !== prevProps.listUsers){
+            if(this.props.listUsers.length === 5){
+                alert("You get 5 users from the list");
+            }
+        }
     }
     handleShowHide=()=>{
         this.setState({
@@ -25,6 +52,7 @@ class DisplayInfo extends React.Component {
         //map trả về 1 mảng mới và mảng mới chứa code HTML
         //covert từ string sang number => thêm dấu + vào trước string
         //template(HTML) + logicJS : component
+        console.log(">>> call render");
         return (
             <div className="display-info-container">
                 {/*<img src={logo} className="display-info-logo" alt="logo"/>*/}
