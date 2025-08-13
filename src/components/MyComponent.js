@@ -1,6 +1,7 @@
-import React from 'react'
+import React,{useState} from 'react'
 import AddUserInfo from './AddUserInfo'
 import DisplayInfo from './DisplayInfo'
+/*
 //class component
 //function component
 //render : tập hợp khối HTML xong chuyển thành giao diện
@@ -75,7 +76,7 @@ class MyComponent extends React.Component {
         return(
             <>
                 {console.log(test)}
-                {/*{JSON.stringify(test)}*/}
+                {{JSON.stringify(test)}}
                 <br/>
                 <div className="a">
                     <AddUserInfo
@@ -93,5 +94,67 @@ class MyComponent extends React.Component {
             </>
         )
     }
+}
+*/
+const MyComponent = () => {
+    const listUsers=[
+        {
+            id: 1,
+            name: 'Minh Thang',
+            age: '21'
+        },
+        {
+            id: 2,
+            name: 'Thanh Binh',
+            age: '19'
+        },
+        {
+            id: 3,
+            name: 'Kieu Yen',
+            age: '22'
+        }
+    ]
+    // //Sai không cần 2 state do khi render lại giao diện nó sẽ xung đột với nhau
+    // //Kiêu khi mk thêm nhưng xóa mk k làm gì thì React nó đéo hiểu mk đang làm gì cả
+    // const [addUser, setAddUser] = useState(listUsers)
+    // const [deleteUser, setDeleteUser] = useState(listUsers)
+    //Đúng => xử lý với 1 useState là được
+    //Dữ liệu khi render lại thì phải là thg sẽ thay đổi : state users chứ không phải là const listUsers
+    const [users, setUsers] = useState(listUsers)
+    const [click, setClick] = useState({})
+
+    const handleClick = () => {
+       setClick({
+           name: 'Minh Thang',
+           age: Math.floor(Math.random()*100)+1
+       })
+    }
+
+    const handleAddNewUser = (userObj ) => {
+        setUsers(prev => [userObj,...prev])
+    }
+
+    const handleDeleteUser = (userId) => {
+        setUsers(prev => prev.filter(user => user.id !== userId))
+    }
+
+    return(
+        <>
+            <br/>
+            <div className="a">
+                <AddUserInfo
+                    handleAddNewUser={handleAddNewUser}
+                />
+                <br/> <br/>
+                <DisplayInfo
+                    listUsers={users}
+                    handleDeleteUser={handleDeleteUser}
+                />
+            </div>
+            <div className="b">
+
+            </div>
+        </>
+    )
 }
 export default MyComponent;
