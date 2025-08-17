@@ -1,33 +1,15 @@
-import logo from './logo.svg';
 import './App.scss';
-import { useDispatch, useSelector } from 'react-redux';
-import MyComponent from './components/MyComponent';
-import { increaseCounter, decreaseCounter } from './redux/action/counterAction';
+
 import React from 'react'
+import Header from "./components/Header/Header";
 
-class App extends React.Component {
-    render() {
-        return (
-            <div className="app-container">
-                Hello world with Minh Thang
-                <br/>
-                <MyComponent></MyComponent>
-            </div>
-        )
-    }
+const App = () => {
+
+    return (
+        <div>
+            <Header/>
+        </div>
+    );
 }
-
-
-// const App = () => {
-//     const count = useSelector(state => state.counter.count);
-//     const dispatch = useDispatch();
-//
-//     return (
-//         <div>
-//             Hello world with Minh Thang
-//             <MyComponent></MyComponent>
-//         </div>
-//     );
-// }
 
 export default App;
