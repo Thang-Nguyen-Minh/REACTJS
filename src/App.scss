@@ -51,14 +51,66 @@ code {
     transform: rotate(360deg);
   }
 }
+@media (min-width: 1400px) {
+  .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    max-width: 1500px !important;
+  }
+}
 .app-container {
   .header-container {
-    .navbar-nav{
+    .btn-login{
+      border-radius : 8px;
+      margin-right : 8px;
+      padding : 0 15px;
+      border: 1px solid #535353;
+      height: 40px;
+    }
+    .btn-signup{
+      border-radius : 8px;
+      margin-left : 8px;
+      padding : 0 15px;
+      background-color: #303030;
+      color: white;
+      height: 40px;
+      &:hover {
+        background-color: black;
+      }
+    }
+    .navbar{
       z-index: 10;
-      opacity : 0.6;
+      background-color: rgba(0,0,0,0) !important;
+      padding-top: 20px;
       .nav-link{
         &.active{
           color: rgba(255, 0, 81, 0.93);
+        }
+      }
+    }
+  }
+  .homepage-container {
+    .homepage-content{
+      position: relative;
+      padding : 50px;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      .title-1{
+        font-size: 50px;
+        font-weight: bold;
+      }
+      .title-2{
+        font-size: 25px;
+      }
+      .title-3{
+        button{
+          border-radius : 10px;
+          padding : 10px;
+          color: white;
+          background-color: black;
+          &:hover{
+            background-color: #564B58;
+          }
         }
       }
     }
@@ -72,4 +124,10 @@ video{
 }
 .navbar-brand {
   color: #ff0051 !important;
+}
+
+
+.btn-signup:hover{
+  background-color: #282c34;
+  color: white;
 }
