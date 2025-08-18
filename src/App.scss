@@ -54,6 +54,8 @@ code {
 .app-container {
   .header-container {
     .navbar-nav{
+      z-index: 10;
+      opacity : 0.6;
       .nav-link{
         &.active{
           color: rgba(255, 0, 81, 0.93);
@@ -61,4 +63,13 @@ code {
       }
     }
   }
+}
+video{
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  z-index: -1;
+}
+.navbar-brand {
+  color: #ff0051 !important;
 }
