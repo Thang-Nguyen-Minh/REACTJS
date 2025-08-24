@@ -52,7 +52,7 @@ const ModalCreateUser = (props) =>{
             toast.error("Password is invalid");
             return;
         }
-        //Submit data
+        //Submit form
         const data = new FormData();
         data.append('email', email);
         data.append('password', password);
@@ -80,34 +80,34 @@ const ModalCreateUser = (props) =>{
                     <Modal.Title>Add new user</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <data className="row g-3">
+                    <form className="row g-3">
                         <div className="col-md-6">
-                            <label className="data-label">Email</label>
-                            <input type="email" className="data-control"
+                            <label className="form-label">Email</label>
+                            <input type="email" className="form-control"
                                    value={email}
                                     onChange={(e)=>setEmail(e.target.value)}
                             />
                         </div>
                         <div className="col-md-6">
-                            <label className="data-label">Password</label>
-                            <input type="password" className="data-control" value={password}
+                            <label className="form-label">Password</label>
+                            <input type="password" className="form-control" value={password}
                                    onChange={(e)=>setPassword(e.target.value)}/>
                         </div>
                         <div className="col-md-6">
-                            <label className="data-label">Username</label>
-                            <input type="text" className="data-control" value={username}
+                            <label className="form-label">Username</label>
+                            <input type="text" className="form-control" value={username}
                                    onChange={(e)=>setUsername(e.target.value)}/>
                         </div>
                         <div className="col-md-4">
-                            <label className="data-label">Role</label>
-                            <select className="data-select" onChange={(e)=>setRole(e.target.value)}
+                            <label className="form-label">Role</label>
+                            <select className="form-select" onChange={(e)=>setRole(e.target.value)}
                             value={role}>
                                 <option value="USER">USER</option>
                                 <option value="ADMIN">ADMIN</option>
                             </select>
                         </div>
                         <div className="col-md-12">
-                            <label className="data-label label-upload" htmlFor="labelUpload">
+                            <label className="form-label label-upload" htmlFor="labelUpload">
                                 <FcPlus/> Upload Image
                             </label>
                             <input type="file" id="labelUpload" hidden onChange={(e)=>handleUploadImage(e)}/>
@@ -116,7 +116,7 @@ const ModalCreateUser = (props) =>{
                             {previewImage ? <img alt="" src={previewImage}/>
                             : <span>Preview Image</span>}
                         </div>
-                    </data>
+                    </form>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
